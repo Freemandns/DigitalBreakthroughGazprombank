@@ -2,7 +2,13 @@
 
 namespace app\controllers;
 
+use app\models\entities\Evaluations;
+use app\models\entities\IdeaUsers;
+use app\models\entities\Thematics;
+use app\models\entities\Type;
+use app\models\entities\Users;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -63,13 +69,13 @@ class SiteController extends Controller
     {
 		if(!Yii::$app->user->isGuest)
 		{
-			return $this->redirect(['login']);
+			return $this->redirect(['main']);
 		}
 
 		$model=new LoginForm();
 		if($model->load(Yii::$app->request->post())&&$model->login())
 		{
-			return $this->redirect(['login']);
+			return $this->redirect(['main']);
 		}
 
 		$model->password='';
@@ -83,9 +89,47 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionLogin()
+    public function actionMain()
     {
-        return $this->render('index');
+		$ideaUsers_dataProvider=new ActiveDataProvider([
+			'query'=>IdeaUsers::find(),
+		]);
+		$chart=[];
+
+		foreach(Thematics::find()->select(['id_thematic','thematic_name'])->all() as $value)
+		{
+			/** @noinspection PhpPossiblePolymorphicInvocationInspection */
+			$count=IdeaUsers::find()->select('thematic_id')->where([
+				'thematic_id'=>$value->id_thematic
+			])->count();
+
+			if($count==0)
+			{
+				/** @noinspection PhpPossiblePolymorphicInvocationInspection */
+				$chart[$value->thematic_name]=0;
+			}
+			else
+			{
+				/** @noinspection PhpPossiblePolymorphicInvocationInspection */
+				$chart[$value->thematic_name]=100/(IdeaUsers::find()->select('id')->count()/$count);
+			}
+		}
+
+		$users_dataProvider=new ActiveDataProvider([
+			'query'=>Users::find(),
+		]);
+
+		$randomIdeaUsers_dataProvider=new ActiveDataProvider([
+			'query'=>IdeaUsers::find()->orderBy('RAND()')->limit(3),
+		]);
+
+        return $this->render('main',[
+			'ideaUsers_dataProvider'=>$ideaUsers_dataProvider,
+			'chart'=>$chart,
+			'thematics'=>Thematics::find()->all(),
+			'users_dataProvider'=>$users_dataProvider,
+			'randomIdeaUsers_dataProvider'=>$randomIdeaUsers_dataProvider
+		]);
     }
 
     /**
@@ -105,17 +149,15 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionContact()
+    public function actionEvaluation($idea_users, $type)
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+		$evaluation=new Evaluations();
+		$evaluation->id_user=Yii::$app->user->id;
+		$evaluation->id_idea_users=$idea_users;
+		$evaluation->id_type=$type;
+		$evaluation->save();
 
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+		return $this->redirect(['index']);
     }
 
     /**
