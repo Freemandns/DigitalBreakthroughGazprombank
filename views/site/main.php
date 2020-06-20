@@ -28,7 +28,7 @@ $this->title = 'Главная';
 			'mood_id',
 			//'user_id',
 
-			['class'=>'yii\grid\ActionColumn'],
+//			['class'=>'yii\grid\ActionColumn'],
 		],
 	]);?>
 
@@ -69,7 +69,7 @@ $this->title = 'Главная';
 			//'tower_level_id',
 			//'tower_progress',
 
-			['class'=>'yii\grid\ActionColumn'],
+//			['class'=>'yii\grid\ActionColumn'],
 		],
 	]);?>
 
@@ -91,7 +91,7 @@ $this->title = 'Главная';
 			'mood_id',
 			//'user_id',
 
-			['class'=>'yii\grid\ActionColumn'],
+//			['class'=>'yii\grid\ActionColumn'],
 		],
 	]);?>
 

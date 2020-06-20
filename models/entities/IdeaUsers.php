@@ -55,10 +55,10 @@ class IdeaUsers extends \yii\db\ActiveRecord
     {
         return [
             'id_idea_user' => 'Id Idea User',
-            'thematic_id' => 'Thematic ID',
-            'idea_header' => 'Idea Header',
-            'idea_description' => 'Idea Description',
-            'mood_id' => 'Mood ID',
+            'thematic_id' => 'Тематика идеи:',
+            'idea_header' => 'Название идеи:',
+            'idea_description' => 'Описание идеи:',
+            'mood_id' => 'Настроение идеи:',
             'user_id' => 'User ID',
             'status_id' => 'Status ID',
         ];

@@ -11,6 +11,7 @@ use Yii;
  * @property string $tower_level_name
  *
  * @property Users[] $users
+ * @property Users[] $users0
  */
 class TowerLevels extends \yii\db\ActiveRecord
 {
@@ -50,6 +51,16 @@ class TowerLevels extends \yii\db\ActiveRecord
      * @return \yii\db\ActiveQuery
      */
     public function getUsers()
+    {
+        return $this->hasMany(Users::className(), ['tower_progress' => 'id_tower_level']);
+    }
+
+    /**
+     * Gets query for [[Users0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers0()
     {
         return $this->hasMany(Users::className(), ['tower_level_id' => 'id_tower_level']);
     }

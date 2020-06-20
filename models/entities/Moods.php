@@ -11,7 +11,6 @@ use Yii;
  * @property string $mood_name
  *
  * @property IdeaUsers[] $ideaUsers
- * @property Tasks[] $tasks
  */
 class Moods extends \yii\db\ActiveRecord
 {
@@ -53,15 +52,5 @@ class Moods extends \yii\db\ActiveRecord
     public function getIdeaUsers()
     {
         return $this->hasMany(IdeaUsers::className(), ['mood_id' => 'id_mood']);
-    }
-
-    /**
-     * Gets query for [[Tasks]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTasks()
-    {
-        return $this->hasMany(Tasks::className(), ['mood_id' => 'id_mood']);
     }
 }

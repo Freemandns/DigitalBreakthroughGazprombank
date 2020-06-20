@@ -11,7 +11,6 @@ use Yii;
  * @property string $thematic_name
  *
  * @property IdeaUsers[] $ideaUsers
- * @property Tasks[] $tasks
  */
 class Thematics extends \yii\db\ActiveRecord
 {
@@ -53,15 +52,5 @@ class Thematics extends \yii\db\ActiveRecord
     public function getIdeaUsers()
     {
         return $this->hasMany(IdeaUsers::className(), ['thematic_id' => 'id_thematic']);
-    }
-
-    /**
-     * Gets query for [[Tasks]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTasks()
-    {
-        return $this->hasMany(Tasks::className(), ['thematic_id' => 'id_thematic']);
     }
 }
