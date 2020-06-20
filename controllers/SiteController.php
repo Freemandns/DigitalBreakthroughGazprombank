@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\entities\Department;
 use app\models\entities\Evaluations;
 use app\models\entities\IdeaUsers;
 use app\models\entities\Thematics;
@@ -91,9 +92,6 @@ class SiteController extends Controller
      */
     public function actionMain()
     {
-		$ideaUsers_dataProvider=new ActiveDataProvider([
-			'query'=>IdeaUsers::find(),
-		]);
 		$chart=[];
 
 		foreach(Thematics::find()->select(['id_thematic','thematic_name'])->all() as $value)
@@ -115,20 +113,38 @@ class SiteController extends Controller
 			}
 		}
 
-		$users_dataProvider=new ActiveDataProvider([
-			'query'=>Users::find(),
-		]);
-
-		$randomIdeaUsers_dataProvider=new ActiveDataProvider([
-			'query'=>IdeaUsers::find()->orderBy('RAND()')->limit(3),
-		]);
-
         return $this->render('main',[
-			'ideaUsers_dataProvider'=>$ideaUsers_dataProvider,
-			'chart'=>$chart,
+			'ideaUsers'=>IdeaUsers::find()->asArray()->select([
+				'avatar',
+				'idea_header',
+				'idea_description',
+				'surname',
+				'firstname'
+			])->join('INNER JOIN','users','idea_users.user_id=users.id')->limit(7)->all(),
 			'thematics'=>Thematics::find()->all(),
-			'users_dataProvider'=>$users_dataProvider,
-			'randomIdeaUsers_dataProvider'=>$randomIdeaUsers_dataProvider
+			'users'=>IdeaUsers::find()->asArray()->select([
+				'avatar',
+				'idea_header',
+				'idea_description',
+				'surname',
+				'firstname'
+			])->join(
+				'INNER JOIN',
+				'users',
+				'idea_users.user_id=users.id'
+			)->orderBy(['rating'=>SORT_ASC])->limit(7)->all(),
+			'department'=>Department::find()->all(),
+			'randomIdeaUsers'=>IdeaUsers::find()->asArray()->select([
+				'avatar',
+				'idea_header',
+				'idea_description',
+				'surname',
+				'firstname'
+			])->join(
+				'INNER JOIN',
+				'users',
+				'idea_users.user_id=users.id'
+			)->orderBy('RAND()')->limit(3)->all()
 		]);
     }
 

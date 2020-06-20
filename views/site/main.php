@@ -1,14 +1,15 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $ideaUsers_dataProvider DataProvider */
-/* @var $chart array */
+/* @var $ideaUsers array */
 /* @var $thematics array */
-/* @var $users_dataProvider DataProvider */
-/* @var $randomIdeaUsers_dataProvider DataProvider */
+/* @var $users array */
+/* @var $department array */
+/* @var $randomIdeaUsers array */
 
 use yii\debug\models\timeline\DataProvider;
 use yii\grid\GridView;
+use yii\helpers\Url;
 use yii\widgets\Pjax;
 
 $this->title = 'Главная';
@@ -17,84 +18,18 @@ $this->title = 'Главная';
     <h1 class='pred'>Предложения</h1>
 
     <div class='top'>
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-
+        <?php foreach($ideaUsers as $value): ?>
+            <div class='span'>
+                <img class='ava' src="<?=$value['avatar']?>">
+                <div class='lf'>
+                    <h4><?=$value['idea_header']?></h4>
+                    <p><?=$value['idea_description']?></p>
+                    <h4><?=$value->surname?> <?=$value['firstname']?></h4>
+                    <img class='oc' src="/web/assets/main_img/likes.png">
+                    <img class='oc' src="/web/assets/main_img/dislikes.png">
+                </div>
+            </div>
+        <?php endforeach; ?>
 
     </div>
 
@@ -107,15 +42,13 @@ $this->title = 'Главная';
 </div>
 <div class='razdel'>
     <ul class='rez'>
-        <a href="#"><li>Управление</li></a>
-        <a href="#"><li>Коммуникация</li></a>
-        <a href="#"><li>Досуг</li></a>
-        <a href="#"><li>Питание</li></a>
-        <a href="#"><li>Обеспечение</li></a>
-        <a href="#"><li>Оформление</li></a>
-        <a href="#"><li>Строение</li></a>
+        <?php foreach($thematics as $value): ?>
+            <a href="<?=Url::toRoute(['ideas/filter-thematics', 'filter'=>$value->id_thematic])?>">
+                <li><?=$value->thematic_name?></li>
+            </a>
+        <?php endforeach; ?>
     </ul>
-    <h1  class='tem'>Тематики</h1>
+    <h1 class='tem'>Тематики</h1>
 </div>
 
 
@@ -124,100 +57,37 @@ $this->title = 'Главная';
 
 
     <img class='topimg' src="/web/assets/main_img/11.gif">
-   
+
 
 
 <div class='top'>
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
+	<?php foreach($users as $value): ?>
+        <div class='span'>
+            <img class='ava' src="<?=$value['avatar']?>">
+            <div class='lf'>
+                <h4><?=$value['idea_header']?></h4>
+                <p><?=$value['idea_description']?></p>
+                <h4><?=$value->surname?> <?=$value['firstname']?></h4>
+                <img class='oc' src="/web/assets/main_img/likes.png">
+                <img class='oc' src="/web/assets/main_img/dislikes.png">
+            </div>
+        </div>
+	<?php endforeach; ?>
 
     </div>
 
 
-    <h1 class='pred'>Участники</h1>  
+    <h1 class='pred'>Участники</h1>
 
 
 </div>
 <div class='razdel' style=" background-color: #CEDFF4;">
     <ul class='rez' style='width: 40%;'>
-        <a href="#"><li>Отдел</li></a>
-        <a href="#"><li>Управление</li></a>
-        <a href="#"><li>Департамент</li></a>
-        <a href="#"><li>Компания</li></a>
+		<?php foreach($department as $value): ?>
+            <a href="<?=Url::toRoute(['ideas/filter-department','filter'=>$value->id_department])?>">
+                <li><?=$value->department_name?></li>
+            </a>
+		<?php endforeach; ?>
     </ul>
     <h1  class='tem' style="opacity: 0.7; margin-left: -10%; color: #E6EAF0;">Подразделения</h1>
 </div>
@@ -230,42 +100,21 @@ $this->title = 'Главная';
 <div class='randideas'>
     <h1 class='tem'>Cлучайные идеи</h1>
     <img src="">
-   
+
 
 <div class='top'>
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
-    <div class='span'>
-        <img class='ava' src="/web/assets/main_img/1.png">
-    <div class='lf'>
-        <h4>Управление</h4>
-        <p>Распустить весь отдел стандартизации программного кода!</p>
-        <h4>Бунина Вероника</h4>
-        <img class='oc' src="/web/assets/main_img/likes.png">
-        <img class='oc' src="/web/assets/main_img/dislikes.png">
-    </div>
-    </div>
-
+	<?php foreach($randomIdeaUsers as $value): ?>
+        <div class='span'>
+            <img class='ava' src="<?=$value['avatar']?>">
+            <div class='lf'>
+                <h4><?=$value['idea_header']?></h4>
+                <p><?=$value['idea_description']?></p>
+                <h4><?=$value->surname?> <?=$value['firstname']?></h4>
+                <img class='oc' src="/web/assets/main_img/likes.png">
+                <img class='oc' src="/web/assets/main_img/dislikes.png">
+            </div>
+        </div>
+	<?php endforeach; ?>
 </div>
 
 </div>
