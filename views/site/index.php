@@ -6,5 +6,5 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
-    <?=Yii::$app->user->identity->id_role?>
+    <?=Yii::$app->user->identity->role_id?>
 </div>

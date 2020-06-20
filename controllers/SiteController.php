@@ -105,17 +105,18 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionContact()
+    public function actionLk()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+        return $this->render('lk');
+        // $model = new ContactForm();
+        // if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+        //     Yii::$app->session->setFlash('contactFormSubmitted');
 
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+        //     return $this->refresh();
+        // }
+        // return $this->render('contact', [
+        //     'model' => $model,
+        // ]);
     }
 
     /**
@@ -126,5 +127,68 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionStore()
+    {
+        return $this->render('store');
+    }
+
+    public function actionGame()
+    {
+        return $this->render('game');
+    }
+
+    public function actionMyIdea()
+    {
+        return $this->render('my-idea');
+    }
+
+    public function actionAddIdea()
+    {
+        return $this->render('add-idea');
+    }
+
+    public function actionFavoriteIdea()
+    {
+        return $this->render('favorite-idea');
+    }
+
+    public function actionIdeaDel()
+    {
+        return $this->render('idea-del');
+    }
+
+    public function actionModerIdeaClose()
+    {
+        return $this->render('moder-idea-close');
+    }
+
+    public function actionHistoryStore()
+    {
+        return $this->render('history-store');
+    }
+
+    public function actionBuyProduct()
+    {
+        return $this->render('buy-product');
+    }
+
+    public function actionIdeaMore()
+    {
+        return $this->render('idea-more');
+    }
+
+    public function actionCreate()
+    {
+        $model = new IdeaUsers();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id_idea_user]);
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 }

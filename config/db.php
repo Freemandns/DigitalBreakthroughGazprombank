@@ -2,10 +2,10 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=gazprombank;dbname=gazprombank',
+    'dsn' => 'mysql:host=localhost;dbname=gazprombank',
     'username' => 'root',
-    'password' => 'root',
-    'charset' => 'utf8',
+    'password' => '',
+    'charset' => 'utf8mb4',
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
