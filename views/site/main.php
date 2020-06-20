@@ -13,87 +13,259 @@ use yii\widgets\Pjax;
 
 $this->title = 'Главная';
 ?>
-<div class="site-index">
-	<?php Pjax::begin(); ?>
+<div class='topideas'>
+    <h1 class='pred'>Предложения</h1>
 
-	<?=GridView::widget([
-		'dataProvider'=>$ideaUsers_dataProvider,
-		'columns'=>[
-			['class'=>'yii\grid\SerialColumn'],
+    <div class='top'>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-			'id_idea_user',
-			'thematic_id',
-			'idea_header',
-			'idea_description',
-			'mood_id',
-			//'user_id',
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-//			['class'=>'yii\grid\ActionColumn'],
-		],
-	]);?>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-	<?php Pjax::end(); ?>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-    <hr>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-    <?php print_r($chart) ?>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-    <hr>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
 
-    <?php print_r($thematics) ?>
 
-    <hr>
 
-	<?php Pjax::begin(); ?>
+    </div>
 
-	<?=GridView::widget([
-		'dataProvider'=>$users_dataProvider,
-		'columns'=>[
-			['class'=>'yii\grid\SerialColumn'],
 
-			'id',
-			'login',
-			'email:email',
-			'firstname',
-			'surname',
-			//'patronymic',
-			//'avatar',
-			//'role_id',
-			//'position_id',
-			//'department_id',
-			//'rating',
-			//'achievement_id',
-			//'gazprom_coin',
-			//'favourite_idea_id',
-			//'idea_user_id',
-			//'tower_level_id',
-			//'tower_progress',
+    <div class='rg'>
+        <img src="/web/assets/main_img/11.gif" width="100%" style="float: right; margin: 65% 0 0 0;">
+    </div>
 
-//			['class'=>'yii\grid\ActionColumn'],
-		],
-	]);?>
 
-	<?php Pjax::end(); ?>
+</div>
+<div class='razdel'>
+    <ul class='rez'>
+        <a href="#"><li>Управление</li></a>
+        <a href="#"><li>Коммуникация</li></a>
+        <a href="#"><li>Досуг</li></a>
+        <a href="#"><li>Питание</li></a>
+        <a href="#"><li>Обеспечение</li></a>
+        <a href="#"><li>Оформление</li></a>
+        <a href="#"><li>Строение</li></a>
+    </ul>
+    <h1  class='tem'>Тематики</h1>
+</div>
 
-    <hr>
 
-	<?php Pjax::begin(); ?>
 
-	<?=GridView::widget([
-		'dataProvider'=>$randomIdeaUsers_dataProvider,
-		'columns'=>[
-			['class'=>'yii\grid\SerialColumn'],
+<div class='topuser'>
 
-			'id_idea_user',
-			'thematic_id',
-			'idea_header',
-			'idea_description',
-			'mood_id',
-			//'user_id',
 
-//			['class'=>'yii\grid\ActionColumn'],
-		],
-	]);?>
+    <img class='topimg' src="/web/assets/main_img/11.gif">
+   
 
-	<?php Pjax::end(); ?>
+
+<div class='top'>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    </div>
+
+
+    <h1 class='pred'>Участники</h1>  
+
+
+</div>
+<div class='razdel' style=" background-color: #CEDFF4;">
+    <ul class='rez' style='width: 40%;'>
+        <a href="#"><li>Отдел</li></a>
+        <a href="#"><li>Управление</li></a>
+        <a href="#"><li>Департамент</li></a>
+        <a href="#"><li>Компания</li></a>
+    </ul>
+    <h1  class='tem' style="opacity: 0.7; margin-left: -10%; color: #E6EAF0;">Подразделения</h1>
+</div>
+
+<div class='razdel'>
+<input class='but' type="button" name="" value="Личный кабинет">
+</div>
+
+
+<div class='randideas'>
+    <h1 class='tem'>Cлучайные идеи</h1>
+    <img src="">
+   
+
+<div class='top'>
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+    <div class='span'>
+        <img class='ava' src="/web/assets/main_img/1.png">
+    <div class='lf'>
+        <h4>Управление</h4>
+        <p>Распустить весь отдел стандартизации программного кода!</p>
+        <h4>Бунина Вероника</h4>
+        <img class='oc' src="/web/assets/main_img/likes.png">
+        <img class='oc' src="/web/assets/main_img/dislikes.png">
+    </div>
+    </div>
+
+</div>
+
 </div>
