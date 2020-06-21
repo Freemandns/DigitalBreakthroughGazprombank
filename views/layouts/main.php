@@ -29,7 +29,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <header> 
+    <header>
     <a href="index.html"><img src="/web/assets/main_img/logobank.png"></a>
     <!-- <ul class='menu'>
         <a href="#"><li>Личный кабинет</li></a>
@@ -37,7 +37,7 @@ AppAsset::register($this);
         <a href="#"><li>Тематики</li></a>
         <a href="#"><li>Рейтинг Участников</li></a>
         <a href="#"><li>Случайные идеи</li></a>
-        
+
     </ul> -->
 
     <ul class="menu">
@@ -50,12 +50,12 @@ AppAsset::register($this);
                 'items' => [
                     // ['label' => 'Главная', 'url' => ['/site/index']],
                     ['label' => 'Личный кабинет', 'url' => ['/site/lk']],
-                    ['label' => 'Популярные идеи', 'url' => '#'],
-                    ['label' => 'Тематики', 'url' => '#'],
-                    ['label' => 'Рейтинг участников', 'url' => '#'],
-                    ['label' => 'Случайные идеи', 'url' => '#'],
+                    ['label' => 'Популярные идеи', 'url' => '#Offers'],
+                    ['label' => 'Тематики', 'url' => '#Thematics'],
+                    ['label' => 'Рейтинг участников', 'url' => '#Participants'],
+                    ['label' => 'Случайные идеи', 'url' => '#RandomIdeas'],
                     Yii::$app->user->isGuest ? (
-                        ['label' => 'Авторизация', 'url' => ['/site/login']]
+                        ['label' => 'ВХОД', 'url' => ['/site/index']]
                     ) : (
                         Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(
@@ -85,13 +85,13 @@ AppAsset::register($this);
 <footer>
 <div class='menu_footer'>
     <div id='footer_menu'>
-        <?php 
+        <?php
             echo "<a class='menu_btn' href='/web/index.php?r=site%2Flk'>Личный кабинет</a><br>
                   <a class='menu_btn' href='#'>Популярные идеи</a><br>
                   <a class='menu_btn' href='#'>Тематики</a><br>
                   <a class='menu_btn' href='#'>Рейтинг участников</a><br>
-                  <a class='menu_btn' href='#'>Слуйчайные идеи</a><br>"; 
-        ?> 
+                  <a class='menu_btn' href='#'>Слуйчайные идеи</a><br>";
+        ?>
     </div>
     <div class='soccet'>
         <a href="#"><img class='fix_size_ico' src="/web/assets/main_img/in.png"></a>

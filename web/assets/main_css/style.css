@@ -27,6 +27,8 @@ header{
 	margin: 0;
 	float: left;
 	height: 8em;
+	position: relative;
+	top: 0;
 	}
 header img{
 	width: 20%;
@@ -124,6 +126,7 @@ float: left;
 	background-color: rgba(80,139,126,0.3);
 	margin: 5px;
 	padding: 5px;
+	border-radius: 20px;
 }
 .oc{
 	width: 5%;
@@ -236,7 +239,7 @@ h4{
 	margin: 5% auto;
 }
 .randideas .tem{
-	    z-index: 5;
+	z-index: 7;
     display: flex;
     position: sticky;
     margin: inherit;
@@ -326,6 +329,14 @@ footer p{
 .menu_btn{
 	font-size: 15pt;
 	color: white;
+	line-height: 2em;
+	transition: 0.3s;
+}
+
+.menu_btn:hover{
+	color: white;
+	transition: 0.3s;
+	opacity: 60%;
 }
 
 .copy{
@@ -345,15 +356,98 @@ ul li a{
 	margin-top: 5em;
 }
 
-/* .content_container{
-	display: flex;
-	
-} */
-/* .asd .nav li a{
-	color: white !important;
-} */
 
-/* .container{
+.pages_web{
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+#pages_web_flex{
+	display: flex;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+#b_cont{
+	/* margin: 0 auto;
+	display: block;
+	/* justify-content: center; */
+	/* align-items: center; */
+	width: 100vw;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+	height: 100vh;
+	text-align: center;
+}
+
+#table_page_view{
 	width: 100%;
-    background: linear-gradient(0, #0057B6, #5960EA);
-} */
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	margin-left: 12em;
+	margin-right: 20em;
+	
+}
+
+#rating_circle{
+	background-color: #00C0B8;
+	color: white;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	font-size: 16pt;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	margin-left: 47em;
+	margin-top: 15px;
+}
+
+#avatar_view{
+	margin-top: 3em;
+}
+
+#name_page{
+	font-size: 20pt;
+	color: white;
+}
+
+#achievement_img img{
+	position: absolute;
+	margin-left: -8em;
+	margin-top: -50px;
+	width: 80px;
+	height: 80px;
+}
+
+#user_profile_info{
+	margin-top: 2em;
+	color: white;
+	font-size: 16pt;
+}
+
+.m10px{
+	margin-bottom: 10px;
+}
+
+#btn_lk{
+	margin-top: 15px;
+	color: white;
+	font-size: 16pt;
+}
+
+.btn_lk_view{
+	color: white;
+	transition: 0.3s;
+}
+
+.btn_lk_view:hover{
+	transition: 0.3s;
+	opacity: 60%;
+	color: white;
+	text-decoration: none;
+}

@@ -40,7 +40,7 @@ class Thematics extends \yii\db\ActiveRecord
     {
         return [
             'id_thematic' => 'Id Thematic',
-            'thematic_name' => 'Thematic Name',
+            'thematic_name' => 'Наименование тематики',
         ];
     }
 

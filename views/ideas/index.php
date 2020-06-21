@@ -3,8 +3,10 @@
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+use app\models\entities\Evaluations;
 use yii\grid\GridView;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\Pjax;
 
 $this->title='Выборка';
@@ -21,14 +23,47 @@ $this->title='Выборка';
 			['class'=>'yii\grid\SerialColumn'],
 
 //			'id_idea_user',
-			'thematic_id',
+			'thematic.thematic_name',
 			'idea_header',
 			'idea_description',
-			'mood_id',
-			'user_id',
+			'mood.mood_name',
+			'user.surname',
 			//'status_id',
 
-//			['class'=>'yii\grid\ActionColumn'],
+			[
+				'class'=>'yii\grid\ActionColumn',
+				'template'=>'{like} {dislike} {view}',
+				'buttons'=>[
+					'like'=>function($url,$model,$key)
+					{
+					    if(Evaluations::find()->where(['id_user'=>Yii::$app->user->id])->andWhere([
+								'id_idea_users'=>$key
+							])->count()==0)
+                        {
+							Url::remember();
+							return Html::a('Лайк',Url::toRoute(['like','id'=>$key]));
+                        }
+					    else
+                        {
+                            return null;
+                        }
+					},
+					'dislike'=>function($url,$model,$key)
+					{
+						if(Evaluations::find()->where(['id_user'=>Yii::$app->user->id])->andWhere([
+								'id_idea_users'=>$key
+							])->count()==0)
+                        {
+							Url::remember();
+							return Html::a('Дизлайк',Url::toRoute(['dislike','id'=>$key]));
+                        }
+						else
+						{
+							return null;
+						}
+					},
+				]
+			],
 		],
 	]);?>
 

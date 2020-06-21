@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpUnused */
 
 namespace app\controllers;
 
@@ -6,16 +7,15 @@ use app\models\entities\Department;
 use app\models\entities\Evaluations;
 use app\models\entities\IdeaUsers;
 use app\models\entities\Thematics;
-use app\models\entities\Type;
-use app\models\entities\Users;
+use Exception;
 use Yii;
-use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\LoginForm as LoginFormAlias;
 
 class SiteController extends Controller
 {
@@ -61,23 +61,37 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
+	/**
+	 * {@inheritDoc}
+	 */
+    public function beforeAction($action)
+	{
+		if(Url::toRoute('site/index')!==Url::to()&&Yii::$app->user->isGuest)
+		{
+			return $this->redirect(['index']);
+		}
+
+		try
+		{
+			return parent::beforeAction($action);
+		}catch(BadRequestHttpException $e)
+		{
+			/** @noinspection PhpUnhandledExceptionInspection */
+			throw new Exception($e);
+		}
+	}
+
+	/**
+	 * @return string|Response
+	 */
     public function actionIndex()
     {
 		if(!Yii::$app->user->isGuest)
-		{
 			return $this->redirect(['main']);
-		}
 
-		$model=new LoginForm();
+		$model=new LoginFormAlias();
 		if($model->load(Yii::$app->request->post())&&$model->login())
-		{
 			return $this->redirect(['main']);
-		}
 
 		$model->password='';
 		return $this->render('login',[

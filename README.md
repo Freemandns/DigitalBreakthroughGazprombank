@@ -132,7 +132,7 @@ TESTING
 -------
 
 Tests are located in `tests` directory. They are developed with [Codeception PHP Testing Framework](http://codeception.com/).
-By default there are 3 test suites:
+By default there are 3 id suites:
 
 - `unit`
 - `functional`

@@ -15,7 +15,7 @@ use yii\widgets\Pjax;
 $this->title = 'Главная';
 ?>
 <div class='topideas'>
-    <h1 class='pred'>Предложения</h1>
+    <h1 id="Offers" class='pred'>Предложения</h1>
 
     <div class='top'>
         <?php foreach($ideaUsers as $value): ?>
@@ -40,7 +40,7 @@ $this->title = 'Главная';
 
 
 </div>
-<div class='razdel'>
+<div id="Thematics" class='razdel'>
     <ul class='rez'>
         <?php foreach($thematics as $value): ?>
             <a href="<?=Url::toRoute(['ideas/filter-thematics', 'filter'=>$value->id_thematic])?>">
@@ -53,7 +53,7 @@ $this->title = 'Главная';
 
 
 
-<div class='topuser'>
+<div id="Participants" class='topuser'>
 
 
     <img class='topimg' src="/web/assets/main_img/11.gif">
@@ -97,7 +97,7 @@ $this->title = 'Главная';
 </div>
 
 
-<div class='randideas'>
+<div id="RandomIdeas" class='randideas'>
     <h1 class='tem'>Cлучайные идеи</h1>
     <img src="">
 

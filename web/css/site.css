@@ -113,3 +113,60 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+
+.idea-users-index{
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+#fileter_page_header{
+    font-size: 18pt;
+    color: white;
+}
+
+.idea-users-index #p0 #w0 table{
+   margin: 0 auto;
+    width: 50em;
+    margin-top: 15px;
+}
+
+#table_result{
+    margin-top: 15px;
+    color: white;
+}
+
+.idea-users-index #p0 #w0 table tr th a{
+    color:white;
+}
+
+.idea-users-index #p0 #w0 table tr th{
+    color: white;
+    text-align: center;
+}
+
+.idea-users-index #p0 #w0 table tr td{
+    color:white;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd){
+    background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+.table-striped > tbody > tr:nth-of-type(even){
+    background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+.site-login{
+    display: block;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+td>a{
+    color: white;
+}

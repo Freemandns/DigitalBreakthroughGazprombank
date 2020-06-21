@@ -40,7 +40,7 @@ class Moods extends \yii\db\ActiveRecord
     {
         return [
             'id_mood' => 'Id Mood',
-            'mood_name' => 'Mood Name',
+            'mood_name' => 'Настроение',
         ];
     }
 

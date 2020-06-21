@@ -14,7 +14,7 @@ $ script/bootstrap
 Then run headless tests in the console:
 
 ```
-$ script/test [<test-file>]
+$ script/id [<id-file>]
 ```
 
 To run tests in other browsers, start a server:
@@ -26,12 +26,12 @@ $ script/server
 
 ## Test structure
 
-There are 3 main test modules:
+There are 3 main id modules:
 
-* `test/unit/fn_pjax.js` - Primarily tests the `$.fn.pjax` method and its options
-* `test/unit/pjax.js` - Main comprehensive pjax functionality tests
-* `test/unit/pjax_fallback.js` - Tests that verify same result after navigation
+* `id/unit/fn_pjax.js` - Primarily tests the `$.fn.pjax` method and its options
+* `id/unit/pjax.js` - Main comprehensive pjax functionality tests
+* `id/unit/pjax_fallback.js` - Tests that verify same result after navigation
   even if pjax is disabled (like for browsers that don't support pushState).
 
-Each test drives a hidden test page in an `<iframe>`. See other tests to see how
+Each id drives a hidden id page in an `<iframe>`. See other tests to see how
 they trigger pjax by using the `frame` reference and remember to do so as well.

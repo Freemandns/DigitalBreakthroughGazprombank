@@ -82,7 +82,7 @@ class Users extends \yii\db\ActiveRecord
             'password' => 'Password',
             'email' => 'Email',
             'firstname' => 'Firstname',
-            'surname' => 'Surname',
+            'surname' => 'Фамилия',
             'patronymic' => 'Patronymic',
             'avatar' => 'Avatar',
             'role_id' => 'Role ID',
