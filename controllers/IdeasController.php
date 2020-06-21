@@ -18,7 +18,8 @@ class IdeasController extends Controller
 		]);
 
 		return $this->render('index',[
-			'dataProvider'=>$dataProvider
+			'dataProvider'=>$dataProvider,
+			'title' => 'ВЫБОРКА ПО ТЕМАТИКЕ'
 		]);
 	}
 
@@ -34,6 +35,7 @@ class IdeasController extends Controller
 
 		return $this->render('index',[
 			'dataProvider'=>$dataProvider,
+			'title' => 'ВЫБОРКА ПО ДЕПАРТАМЕНТУ'
 		]);
 	}
 }

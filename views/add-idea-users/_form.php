@@ -12,7 +12,7 @@ use app\models\entities\Moods;
 
 <div class="idea-users-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <!-- <?php $form = ActiveForm::begin(); ?> -->
 
     <!-- <?= $form->field($model, 'thematic_id')->textInput() ?> -->
 
@@ -27,8 +27,6 @@ use app\models\entities\Moods;
     <?= $form->field($model, 'mood_id')->dropdownList(
         Moods::find()->select(['mood_name', 'id_mood'])->indexBy('id_mood')->column()
     ) ?>
-
-        <!-- добавить id в контроллере -->
 
     <div class="form-group">
         <?= Html::submitButton('Добавить', ['class' => 'btn btn-success']) ?>

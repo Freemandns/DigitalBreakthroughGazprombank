@@ -7,15 +7,19 @@ use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 
-$this->title='Выборка';
+$this->title->title;
 ?>
 <div class="idea-users-index">
 
-	<h1><?=Html::encode($this->title)?></h1>
+	<!-- <h1><?=Html::encode($this->title)?></h1> -->
+	<?php $get_filter = $_GET['filter']; ?>
+	<div id='fileter_page_header'><?=$title?></div>
 
 	<?php Pjax::begin(); ?>
 
 	<?=GridView::widget([
+		'summary' => '<div id="table_result">Показано <b>{begin}-{end}</b> из <b>{count}</b>.</div>',
+		'emptyText' => '<div id="table_result">Никаких результатов не найдено.</div>',
 		'dataProvider'=>$dataProvider,
 		'columns'=>[
 			['class'=>'yii\grid\SerialColumn'],
