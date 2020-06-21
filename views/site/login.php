@@ -10,37 +10,29 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Вход';
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Пожалуйста, заполните следующие поля для входа в систему:</p>
+    
+    <p id='auth_page_header'>Авторизация:</p>
+    <p id='auth_page_mess'>Пожалуйста, заполните следующие поля для входа в систему:</p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',
         'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
+            'template' => "<div id='new_color'>{label}</div>\n<div>{input}</div>\n<div>{error}</div>",
+            // 'labelOptions' => ['class' => 'col-lg-1 control-label'],
         ],
-    ]); ?>
+        ]); ?>
 
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'auth_input']) ?>
 
-        <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput(['class' => 'auth_input']) ?>
 
         <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
+            'template' => "<div>{input} {label}</div>\n<div>{error}</div>",
         ]) ?>
 
-        <div class="form-group">
-            <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
-        </div>
+        <?= Html::submitButton('Войти', ['class' => 'auth_btn', 'name' => 'login-button']) ?>
 
     <?php ActiveForm::end(); ?>
 
-    <div class="col-lg-offset-1" style="color:#999;">
-        Вы можете войти в систему с помощью <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        Чтобы изменить логин/пароль, пожалуйста, ознакомьтесь с кодом <code>app\models\User::$users</code>.
-    </div>
 </div>

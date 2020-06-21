@@ -167,6 +167,236 @@ a.desc:after {
 	text-align: center;
 	background: linear-gradient(45deg, #0057B6, #5960EA);
 }
-td>a{
+
+#auth_page_header{
     color: white;
+    font-size: 18pt;
+}
+
+#auth_page_mess{
+    color: white;
+    font-size: 16pt;
+}
+
+label.control-label.col-sm-3{
+    width: 100vw;
+    text-align: center;
+    margin-left: 12px;
+}
+
+.auth_input{
+    border-radius: 15px;
+    border: none;
+    height: 25px;
+    margin-top: 7px;
+    padding-left: 10px;
+}
+
+.auth_btn{
+    border: none;
+    background-color: transparent;
+    color: white;
+    border: solid 3px white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 15px;
+    font-size: 17pt;
+}
+
+.idea_btn{
+    border: none;
+    background-color: transparent;
+    color: white;
+    border: solid 3px white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 15px;
+    font-size: 12pt;
+}
+
+.form-group .field-loginform-username .required .has-error label{
+    color: white;
+}
+
+.new_color label{
+    color: white;
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label{
+    color: yellow;
+}
+
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label{
+    color: lightsalmon;
+}
+
+#shop_page{
+    display: block;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+#st_page{
+    display: block;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+#shop_page_header{
+    color: white;
+    font-size: 20pt;
+}
+
+#history_buy{
+    color: white;
+    text-decoration: underline;
+    font-size: 16pt;
+    margin-bottom: 15px;
+}
+
+#shop_product_img_style{
+    border: solid 3px white;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+#product{
+    margin-top: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#low_coin{
+    color: yellow;
+}
+
+#by_product{
+    color: orange;
+}
+
+#product_img{
+    color: white;
+}
+
+#product_sort{
+    color: white;
+    line-height: 2em;
+}
+
+#product_sort img{
+    margin-bottom: 15px;
+}
+
+#shop_history_by{
+    color: white;
+    font-size: 18pt;
+}
+
+#my_ideas{
+    display: block;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background: linear-gradient(45deg, #0057B6, #5960EA);
+}
+
+#idea_header{
+    color: white;
+    font-size: 20pt;
+}
+
+#them_disign{
+    color: white;
+    font-size: 16pt;
+}
+
+#more_inf_ideas{
+    color: white;
+    font-size: 18pt;
+}
+
+#more_inf_txt{
+    color: white;
+    font-size: 16pt;
+}
+
+#new_idea_header{
+    font-size: 18pt;
+    color: white;
+}
+
+.control-label{
+    color:white;
+    font-size: 16pt;
+}
+
+.form-control{
+    width: 450px;
+    margin: 0 auto;
+}
+
+#favorite_theme_header{
+    font-size: 18pt;
+    color:white;
+}
+
+#theme_favorite_list{
+    font-size: 16pt;
+    color:white;
+}
+
+#game_process{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	width: 100vw;
+	height: 100vh;
+    text-align: center;
+    padding-bottom: 20em;
+}
+
+#info_bar{
+    height: 50px;
+    width: 650px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 3px white;
+    padding-top: 12px;
+    color: white;
+    border-radius: 30px;
+}
+
+#progress_img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+#level_img{
+    width: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#coin_img{
+    width: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#bank_img{
+    width: 500px;
+    margin-top: 30px;
+    border: solid 3px white;
+    border-radius: 20px;
 }

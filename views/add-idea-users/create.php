@@ -9,10 +9,10 @@ $this->title = 'Предложение идеи:';
 ?>
 <div class="idea-users-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+    <div id='st_page'>
+        <p id='new_idea_header'><?= Html::encode($this->title) ?></p>
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
+    </div>
 </div>
